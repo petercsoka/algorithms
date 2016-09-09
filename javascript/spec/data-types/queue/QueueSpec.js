@@ -50,21 +50,21 @@ describe("Queue DT:", function() {
 
             addItems();
 
-            expect(Storage.size()).toEqual(6);
+            expect(Storage.size()).toEqual(Items.length);
             expect(Storage.isEmpty()).toBe(false);
-            expect(Storage.peek()).toEqual("a");
+            expect(Storage.peek()).toEqual(Items[0]);
         });
 
         it("should dequeue the first item from queue", function(){
             addItems();
-            expect(Storage.dequeue()).toEqual("a");
-            expect(Storage.dequeue()).toEqual("b");
-            expect(Storage.dequeue()).toEqual("c");
+            expect(Storage.dequeue()).toEqual(Items[0]);
+            expect(Storage.dequeue()).toEqual(Items[1]);
+            expect(Storage.dequeue()).toEqual(Items[2]);
         })
 
         it("should be return the right queue size", function(){
             addItems();
-            expect(Storage.size()).toEqual(6);
+            expect(Storage.size()).toEqual(Items.length);
         });
 
         it("should be detect if the bag is empty", function(){
@@ -78,7 +78,7 @@ describe("Queue DT:", function() {
 
         it("peek should return the next item in the queue", function(){
             addItems();
-            expect(Storage.peek()).toEqual("a");
+            expect(Storage.peek()).toEqual(Items[0]);
         });
 
         it("should be iterable", function(){

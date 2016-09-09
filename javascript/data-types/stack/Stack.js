@@ -5,7 +5,7 @@ function Stack()
 
 Stack.prototype.push = function(value)
 {
-    this.stack.push(value);
+    this.storage.push(value);
 };
 
 Stack.prototype.pop = function()

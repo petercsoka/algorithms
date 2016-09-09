@@ -4,10 +4,26 @@ var Storage;
 
 describe("Bag DT", function() {
 
-        function BagTests(BagDataType){
+    function BagTests(BagDataType){
+
+        var Items = [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f"
+        ]
+
         beforeEach(function() {
             Storage = new Bag();
         });
+
+        function addItems(){
+            for (var item of Items){
+                Storage.add(item);
+            }
+        }
 
         it("should have add method", function(){
             expect(typeof Storage.add).toEqual('function');
@@ -27,20 +43,15 @@ describe("Bag DT", function() {
         });
 
         it("should be able to add item to the bag", function(){
-            Storage.add("Hello");
-            expect(Storage.size()).toEqual(1);
+            addItems();
+            expect(Storage.size()).toEqual(Items.length);
             expect(Storage.isEmpty()).toBe(false);
-            expect(Storage.bag[0]).toBe("Hello");
+            expect(Storage.bag[0]).toBe(Items[0]);
         });
 
         it("should be return the right bag size", function(){
-            Storage.add("a");
-            Storage.add("b");
-            Storage.add("c");
-            Storage.add("d");
-            Storage.add("e");
-            Storage.add("f");
-            expect(Storage.size()).toEqual(6);
+            addItems();
+            expect(Storage.size()).toEqual(Items.length);
         });
 
         it("should be detect if the bag is empty", function(){
@@ -48,17 +59,15 @@ describe("Bag DT", function() {
         });
 
         it("should be detect if the bag is not empty", function(){
-            Storage.add("a");
+            addItems();
             expect(Storage.isEmpty()).toBe(false);
         });
 
         it("should be iterable", function(){
-            Storage.add(1);
-            Storage.add(2);
-            Storage.add(3);
-            var expected_item = 1;
+            addItems();
+            var expected_item = 0;
             for(var item of Storage) {
-                expect(item).toEqual(expected_item);
+                expect(item).toEqual(Items[expected_item]);
                 expected_item++;
             }
         });

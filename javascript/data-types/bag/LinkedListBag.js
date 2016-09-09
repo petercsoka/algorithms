@@ -4,7 +4,8 @@ function Node()
     this._next = null;
 }
 
-function LinkedListBag(){
+function LinkedListBag()
+{
     this._first = null;
     this._size = 0;
 }
@@ -41,7 +42,8 @@ LinkedListBag.prototype.size = function()
  *     console.log(item);
  * }
  */
-LinkedListBag.prototype[Symbol.iterator] = function(){
+LinkedListBag.prototype[Symbol.iterator] = function()
+{
     var current = this._first;
     return {
         next: function(){

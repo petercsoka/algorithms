@@ -36,7 +36,8 @@ Stack.prototype.peek = function()
  *     console.log(item);
  * }
  */
-Stack.prototype[Symbol.iterator] = function(){
+Stack.prototype[Symbol.iterator] = function()
+{
     var self = this;
     var index = 0;
     return {

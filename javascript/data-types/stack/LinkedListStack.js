@@ -52,7 +52,8 @@ LinkedListStack.prototype.peek = function()
  *     console.log(item);
  * }
  */
-LinkedListStack.prototype[Symbol.iterator] = function(){
+LinkedListStack.prototype[Symbol.iterator] = function()
+{
     var self = this;
     var current = self._first;
     return {

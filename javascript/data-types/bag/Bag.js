@@ -1,4 +1,5 @@
-function Bag(){
+function Bag()
+{
     this.bag = [];
 }
 
@@ -25,7 +26,8 @@ Bag.prototype.size = function()
  *     console.log(item);
  * }
  */
-Bag.prototype[Symbol.iterator] = function(){
+Bag.prototype[Symbol.iterator] = function()
+{
     var self = this;
     var index = 0;
     return {

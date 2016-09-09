@@ -1,0 +1,19 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "Algorithms and data structures in different languages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petercsoka/algorithms.git"
+  },
+  "author": "Peter Csoka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petercsoka/algorithms/issues"
+  },
+  "homepage": "https://github.com/petercsoka/algorithms#readme"
+}

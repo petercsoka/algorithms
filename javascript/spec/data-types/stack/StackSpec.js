@@ -5,9 +5,25 @@ var Storage;
 describe("Stack DT", function() {
 
     function StackTest(DataType){
+
+        var Items = [
+            "1st",
+            "2nd",
+            "3rd",
+            "4th",
+            "5th",
+            "6th"
+        ]
+
         beforeEach(function() {
             Storage = new DataType();
         });
+
+        function addItems(){
+            for (var item of Items){
+                Storage.push(item);
+            }
+        }
 
         it("should have a push method", function(){
             expect(typeof Storage.push).toEqual('function');
@@ -33,28 +49,21 @@ describe("Stack DT", function() {
             expect(Storage.size()).toEqual(0);
             expect(Storage.isEmpty()).toBe(true);
 
-            Storage.push("Hello");
+            addItems();
 
-            expect(Storage.size()).toEqual(1);
+            expect(Storage.size()).toEqual(Items.length);
             expect(Storage.isEmpty()).toBe(false);
-            expect(Storage.peek()).toEqual("Hello");
+            expect(Storage.peek()).toEqual(Items[Items.length-1]);
         });
 
         it("pop should retun the lastly added item", function(){
-            Storage.push("1st");
-            Storage.push("2nd");
-            Storage.push("3rd");
-            expect(Storage.pop()).toEqual("3rd");
+            addItems();
+            expect(Storage.pop()).toEqual(Items[Items.length-1]);
         })
 
         it("should be return the right bag size", function(){
-            Storage.push("a");
-            Storage.push("b");
-            Storage.push("c");
-            Storage.push("d");
-            Storage.push("e");
-            Storage.push("f");
-            expect(Storage.size()).toEqual(6);
+            addItems();
+            expect(Storage.size()).toEqual(Items.length);
         });
 
         it("should be detect if the bag is empty", function(){
@@ -62,17 +71,15 @@ describe("Stack DT", function() {
         });
 
         it("should be detect if the bag is not empty", function(){
-            Storage.push("a");
+            addItems();
             expect(Storage.isEmpty()).toBe(false);
         });
 
         it("should be iterable", function(){
-            Storage.push(1);
-            Storage.push(2);
-            Storage.push(3);
-            var expected_item = Storage.peek();
+            addItems();
+            var expected_item = Storage.size() -1;
             for(var item of Storage) {
-                expect(item).toEqual(expected_item);
+                expect(item).toEqual(Items[expected_item]);
                 expected_item--;
             }
         });

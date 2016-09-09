@@ -19,14 +19,14 @@ LinkedListBag.prototype.add = function(item)
     this._size++;
 }
 
+LinkedListBag.prototype.peek = function()
+{
+    return this._first._item;
+}
+
 LinkedListBag.prototype.isEmpty = function()
 {
-    if (!this.isEmpty()) {
-        var item = this._first;
-        this._first = this._first._next;
-        this._size--;
-        return item;
-    }
+    return this._first === null;
 }
 
 LinkedListBag.prototype.size = function()

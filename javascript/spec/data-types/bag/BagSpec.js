@@ -11,6 +11,11 @@ describe("Bag DT", function() {
         expect(typeof Storage.add).toEqual('function');
     });
 
+    it("should not have a remove or pop method", function(){
+        expect(typeof Storage.remove).toEqual('undefined');
+        expect(typeof Storage.pop).toEqual('undefined');
+    });
+
     it("should have isEmpty method", function(){
         expect(typeof Storage.isEmpty).toEqual('function');
     });

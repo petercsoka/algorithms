@@ -39,12 +39,12 @@ Stack.prototype.peek = function()
 Stack.prototype[Symbol.iterator] = function()
 {
     var self = this;
-    var index = 0;
+    var index = self.size()-1;
     return {
         next: function(){
             var value = self.storage[index];
-            var done = index >= self.size();
-            index++;
+            var done = index >= 0;
+            index--;
             return { value, done };
         }
     };

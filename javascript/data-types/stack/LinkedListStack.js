@@ -65,3 +65,5 @@ LinkedListStack.prototype[Symbol.iterator] = function()
         }
     };
 }
+
+module.exports = LinkedListStack;

@@ -49,3 +49,5 @@ Queue.prototype[Symbol.iterator] = function()
         }
     };
 }
+
+module.exports = Queue;

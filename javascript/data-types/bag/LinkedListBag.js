@@ -54,3 +54,5 @@ LinkedListBag.prototype[Symbol.iterator] = function()
         }
     };
 }
+
+module.exports = LinkedListBag;

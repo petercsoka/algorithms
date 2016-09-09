@@ -22,7 +22,7 @@ LinkedListStack.prototype.push = function(value)
 LinkedListStack.prototype.pop = function()
 {
     if (!this.isEmpty()) {
-        var item = this._first;
+        var item = this._first._item;
         this._first = this._first._next;
         this._size--;
         return item;
@@ -36,7 +36,7 @@ LinkedListStack.prototype.size = function()
 
 LinkedListStack.prototype.isEmpty = function()
 {
-    return this._first === 0;
+    return this.size() === 0;
 };
 
 LinkedListStack.prototype.peek = function()
